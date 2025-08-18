@@ -3,6 +3,7 @@
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Package, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function Hero() {
   return (
@@ -101,25 +102,8 @@ export default function Hero() {
           className="relative mx-auto max-w-4xl"
         >
           <div className="relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-3xl p-8 backdrop-blur-sm border border-gray-700/50 shadow-2xl">
-            <div className="grid grid-cols-3 gap-4 mb-6">
-              {[...Array(9)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  className="aspect-square bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center"
-                  animate={{
-                    scale: [1, 1.05, 1],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    delay: i * 0.1,
-                  }}
-                >
-                  <Package className="w-8 h-8 text-purple-400" />
-                </motion.div>
-              ))}
-            </div>
-            
+           <Image src="/banner.png" alt="Dashboard" width={1000} height={1000} />
+            <br></br>
             <div className="flex items-center justify-center gap-2 text-gray-400">
               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
               <span className="text-sm">Real-time inventory sync</span>

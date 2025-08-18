@@ -10,8 +10,8 @@ const plans = [
     name: 'Starter',
     icon: Zap,
     color: 'from-green-500 to-emerald-500',
-    monthlyPrice: 9,
-    yearlyPrice: 7,
+    monthlyPrice: 3000,
+    yearlyPrice: 2500,
     description: 'Perfect for small businesses',
     features: [
       'Up to 1,000 products',
@@ -24,8 +24,8 @@ const plans = [
     name: 'Growth',
     icon: Crown,
     color: 'from-purple-500 to-pink-500',
-    monthlyPrice: 29,
-    yearlyPrice: 24,
+    monthlyPrice: 5000,
+    yearlyPrice: 4000,
     description: 'For growing businesses',
     popular: true,
     features: [
@@ -40,8 +40,8 @@ const plans = [
     name: 'Pro',
     icon: Rocket,
     color: 'from-blue-500 to-cyan-500',
-    monthlyPrice: 79,
-    yearlyPrice: 65,
+    monthlyPrice: 10000,
+    yearlyPrice: 8000,
     description: 'For large enterprises',
     features: [
       'Unlimited products',
@@ -139,13 +139,13 @@ export default function Pricing() {
                 <div className="mb-8">
                   <div className="flex items-baseline gap-2">
                     <span className="text-5xl font-bold text-white">
-                      ${isYearly ? plan.yearlyPrice : plan.monthlyPrice}
+                      Rs. {(isYearly ? plan.yearlyPrice : plan.monthlyPrice).toLocaleString('en-IN')}
                     </span>
                     <span className="text-gray-400">/month</span>
                   </div>
                   {isYearly && (
                     <p className="text-sm text-green-400 mt-2">
-                      Save ${(plan.monthlyPrice - plan.yearlyPrice) * 12}/year
+                      Save Rs. {((plan.monthlyPrice - plan.yearlyPrice) * 12).toLocaleString('en-IN')}/year
                     </p>
                   )}
                 </div>
